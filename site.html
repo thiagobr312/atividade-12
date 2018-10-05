@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>O Início começa em Valhalla</title>
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="java/site.js">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script>
+        function formatar(mascara, documento) {
+            var i = documento.value.length;
+            var saida = mascara.substring(0, 1);
+            var texto = mascara.substring(i)
+
+            if (texto.substring(0, 1) != saida) {
+                documento.value += texto.substring(0, 1);
+            }
+
+        }
+        function pessoajuridica() {
+            document.getElementById('tabela').style.display = 'none';
+            document.getElementById('tabela2').style.display = 'block';
+        }
+        function pessoafisica() {
+            document.getElementById('tabela2').style.display = 'none';
+            document.getElementById('tabela').style.display = 'block';
+        }
+        function enviar() {
+            document.getElementById('tabela2').style.display = 'none';
+            document.getElementById('tabela').style.display = 'none';
+            document.getElementById('enviar').style.display = 'none';
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="titulo">
+        <h1>
+            <br>Valhalla
+        </h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a class="btn btn-outline-dark" type="radio" name="options" id="option1" autocomplete="off"
+                    checked href="inicio.html" role="button">Início</a></li>
+            <li><a class="btn btn-outline-dark active" type="radio" name="options" id="option1" autocomplete="off" checked
+                    href="site.html" role="button">Reserva</a></li>
+        </ul>
+    </div>
+    <div id="background-box">
+        <div id="vall"><h1 class="center mt-2">Garanta sua vaga em Valhalla</h1></div>
+        <div class="center mt-4">
+            <button onclick="pessoajuridica()">Exército</button>
+            <button onclick="pessoafisica()">Guerreiro</button>
+        </div>
+        <h2 id="texto"></h2>
+        <div id="tabela">
+            <h5 class="center mt-4">Dados do Guerreiro</h5>
+            <table id="center123" width="301" height="160" cellspacing="0" class="tabela">
+                <tr>
+                </tr>
+                <tr>
+                    <td width="32" height="24">Nome:</td>
+                    <td width="265"><input type="text" name="data"></td>
+                </tr>
+                <tr>
+                    <td height="24">Tel.:</td>
+                    <td><input type="text" name="tel" maxlength="12" OnKeyPress="formatar('##-####-####', this)"></td>
+                </tr>
+                <tr>
+                    <td height="24">Cep:</td>
+                    <td><input type="text" name="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)"></td>
+                </tr>
+                <tr>
+                    <td height="24">CPF:</td>
+                    <td><input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)"></td>
+                </tr>
+                <tr>
+                    <td height="24">Rg:</td>
+                    <td><input type="text" name="rg" maxlength="12" OnKeyPress="formatar('##.###.###-#', this)"></td>
+                </tr>
+                <tr>
+                    <td height="24">Email:</td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+            </table>
+            <div class="enviar">
+                <button class="center mt-4" onclick="enviar()">Enviar</button>
+            </div>
+        </div>
+        <div id="tabela2">
+            <h5 class="center mt-4">Dados Do Exército:</h5>
+            <table id="center123" width="301" height="160" cellspacing="0" class="tabela">
+                <tr>
+                </tr>
+                <tr>
+                    <td width="32" height="24">Exército:</td>
+                    <td width="265"><input type="text" name="data"></td>
+                </tr>
+                <tr>
+                    <td height="24">Tel.:</td>
+                    <td><input type="text" name="tel" maxlength="12" OnKeyPress="formatar('##-####-####', this)"></td>
+                </tr>
+                <tr>
+                    <td height="24">Cep:</td>
+                    <td><input type="text" name="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)"></td>
+                </tr>
+                <tr>
+                    <td height="24">CNPJ:</td>
+                    <td><input type="text" name="cnpj" maxlength="18" OnKeyPress="formatar('##.###.###/####-##', this)"></td>
+                </tr>
+                <tr>
+                    <td height="24">Email:</td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+            </table>
+            <div class="enviar">
+                <button class="center mt-4" onclick="enviar()">Enviar</button>
+            </div>
+        </div>
+</body>
+
+</html>
